@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Configure Axios Instance
 const api = axios.create({
-  baseURL: '', // Empty base URL is optimal. It automatically uses the current host + /api (e.g. localhost:3000/api proxied or live-url/api)
+  baseURL: import.meta.env.VITE_API_URL || '', // Points to live backend in production, or uses local proxy in development
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json'
